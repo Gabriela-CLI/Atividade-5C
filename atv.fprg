@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="atv"/>
+        <attribute name="authors" value="gabriela.clirmao"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2026-05-06 02:10:39 "/>
+        <attribute name="created" value="Z2FicmllbGEuY2xpcm1hbztTQU4wNzE3NDg2VzExLTE7MjAyNi0wNS0wNTsiMDk6NDY6MjAgIjszNjgy"/>
+        <attribute name="edited" value="Z2FicmllbGEuY2xpcm1hbztTQU4wNzE3NDg2VzExLTE7MjAyNi0wNS0wNTsiMTA6MTE6NTAgIjsxOzM3Nzc="/>
+        <attribute name="edited" value="QWNhZGVtaWEgQ3VjYSdzIDI7REVTS1RPUC1CR0xDVERMOzIwMjYtMDUtMDY7IjAyOjEwOjM5ICI7MTszODEx"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="VP" type="Real" array="False" size=""/>
+            <declare name="AA, RM, Rej" type="Integer" array="False" size=""/>
+            <assign variable="AA" expression="0"/>
+            <assign variable="RM" expression="0"/>
+            <assign variable="Rej" expression="0"/>
+            <output expression="&quot;Digite o valor do pedido:&quot; &amp; ToChar(10)&amp; &quot;(Para encerrar, digite 0)&quot;" newline="True"/>
+            <input variable="VP"/>
+            <while expression="VP &lt;&gt; 0">
+                <if expression="VP &lt;= 500">
+                    <then>
+                        <assign variable="AA" expression="AA + 1"/>
+                    </then>
+                    <else>
+                        <if expression="VP &gt; 500 &amp;&amp; VP &lt;= 1000">
+                            <then>
+                                <assign variable="RM" expression="RM + 1"/>
+                            </then>
+                            <else>
+                                <assign variable="Rej" expression="Rej + 1"/>
+                            </else>
+                        </if>
+                    </else>
+                </if>
+                <output expression="&quot;Digite o valor do pedido:&quot; &amp; ToChar(10)&amp; &quot;(Para encerrar, digite 0)&quot;" newline="True"/>
+                <input variable="VP"/>
+            </while>
+            <output expression="&quot;Vamos contabilizar a quantidade de pedidos por categoria! Aguarde por favor&quot;" newline="True"/>
+            <output expression="&quot;Pedidos Aprovados Autom&#225;ticamente: &quot; &amp; AA &amp; ToChar(10) &amp; &quot;Pedidos que necessitam de Revis&#227;o Manual: &quot; &amp; RM &amp; ToChar(10) &amp; &quot;Pedidos Rejeitados: &quot; &amp; Rej" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
